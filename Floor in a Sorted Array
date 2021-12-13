@@ -1,0 +1,19 @@
+    long long int start=0;
+    long long int  end= N-1;
+    int ans=-1;
+    long long int mid= start +(end-start)/2;
+    
+    while(start<=end){
+        if(arr[mid]==k){
+            return mid;
+        }
+        else if(arr[mid]<k){
+            ans=mid;
+            start=mid+1;
+        }
+        else{
+            end=mid-1;
+        }
+        mid= start +(end-start)/2;
+    }
+    return ans;
