@@ -1,0 +1,23 @@
+class Solution
+{
+    public:
+    //Function to find the maximum occurring character in a string.
+    char getMaxOccuringChar(string str)
+    {
+        int arr[26]={0};
+        int val=0;
+        for(int i=0; i<str.length(); i++){
+            val=str[i]-'a';
+            arr[val]++;
+        }
+        int count=0; int index=-1;
+        for(int i=0; i<26; i++){
+            if(arr[i]>count){
+                count=arr[i];
+                index=i;
+            }
+        }
+        return ('a'+index);
+    }
+
+};
